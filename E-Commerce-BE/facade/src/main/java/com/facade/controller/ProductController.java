@@ -22,6 +22,11 @@ public class ProductController {
         productService.print();
         return "hello";
     }
+    @GetMapping("/pf")
+    public String profesyonelFonksiyonDeneme(){
+        System.out.printf("yariya indirgenme fonksiyonu tanimlanmasi");
+        return "hi";
+    }
 
 
 }

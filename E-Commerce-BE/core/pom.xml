@@ -5,58 +5,73 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.11</version>
+        <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.core</groupId>
     <artifactId>core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>core</name>
+    <name>demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
-        <spring.boot.version>2.5.2</spring.boot.version>
-
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+
+        <!-- Spring Boot ile web uygulamaları geliştirmek için gerekli bağımlılıkları sağlar. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Geliştirme ortamı için Spring Boot DevTools daha hızlı geliştirme döngüsü için ek geliştirme araçları sağlar.-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+
+
+
+        <!-- Spring Data JPA, Java Persistence API (JPA) ile çalışmayı kolaylaştıran bir Spring Framework modülüdür.  -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.5.1</version>
         </dependency>
+
+
+
+        <!-- Spring Boot ile birlikte Spring Data JPA kullanımını kolaylaştıran bir başlangıç bağımlılığıdır. -->
+        <!-- JPA entegrasyonu için gerekli yapılandırmaları yapmanıza ve bağımlılıkları el ile belirtmenize gerek kalmaz.-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
+
+        <!-- Testler için Spring Boot Starter Test -->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
+            <version>${project.parent.version}</version>
 
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-
             </plugin>
         </plugins>
     </build>

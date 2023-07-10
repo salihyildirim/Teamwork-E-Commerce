@@ -1,6 +1,6 @@
 package com.facade.controller;
 
-import com.core.service.ProductService;
+import com.core.service.product.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -18,14 +18,18 @@ public class ProductController {
 
     @GetMapping("/")
     public String print() {//Deneme amaçlı method silinecek
-        System.out.println("getMapping");
+        System.out.println("\n------------------------------");
         productService.print();
+        System.out.println("\n------------------------------");
+        System.out.println(productService.getProduct("003").getBrand());
+        System.out.println("\n------------------------------");
+        System.out.println(productService.getProductsCountForCategory("Ayakkabi"));
+        System.out.println("\n------------------------------");
+        System.out.println(productService.getProductsForCategory("Ayakkabi"));
+        System.out.println("\n------------------------------");
+        System.out.println(productService.getProductsForCategory(1));
+
         return "hello";
-    }
-    @GetMapping("/pf")
-    public String profesyonelFonksiyonDeneme(){
-        System.out.printf("yariya indirgenme fonksiyonu tanimlanmasi");
-        return "hi";
     }
 
 
